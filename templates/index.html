@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta property="og:title" content="Buy Mars Fields" />
+    <meta property="og:description" content="Beli tanah di mars dari website ini" />
+    <meta property="og:image" content="{{ url_for('static', filename = 'mars.jpeg') }}" />
+    <link rel="icon" href="static/mars.jpeg" type="image/jpg">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <!-- Import JQuery -->
+    <script src="static/script.js"></script>
+    <title>Buying Land in Mars</title>
+</head>
+
+<body>
+    <div class="mask"></div>
+    <div class="order">
+        <h1>Buy Martian Land!</h1>
+        <h3>Price: $1.00 / acre</h3>
+        <p>
+            Did you know you could buy Martian land?<br />
+            This chance won't come again!
+        </p>
+        <div class="order-info">
+            <div class="input-group mb-3">
+                <span class="input-group-text">Name</span>
+                <input id="name" type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Address</span>
+                <input id="address" type="text" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="size">Acres</label>
+                <select class="form-select" id="size">
+                    <option selected>-- Select acreage --</option>
+                    <option value="10 acres">10 acres</option>
+                    <option value="20 acres">20 acres</option>
+                    <option value="30 acres">30 acres</option>
+                    <option value="40 acres">40 acres</option>
+                    <option value="50 acres">50 acres</option>
+                </select>
+            </div>
+            <button onclick="save_order()" type="button" class="btn btn-warning mybtn">Create order</button>
+        </div>
+        <div id="loading"></div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Acres</th>
+                </tr>
+            </thead>
+            <tbody id="order-box">
+                <tr>
+                    <td>Jim</td>
+                    <td>100 Downing St.</td>
+                    <td>20 acres</td>
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>856 Peterson Ave.</td>
+                    <td>10 acres</td>
+                </tr>
+                <tr>
+                    <td>Steve</td>
+                    <td>212 Baker St.</td>
+                    <td>30 acres</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
